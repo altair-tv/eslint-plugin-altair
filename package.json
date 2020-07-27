@@ -1,0 +1,39 @@
+{
+  "name": "@altairtv/eslint-plugin-altair",
+  "version": "0.0.1",
+  "description": "An opinionated collection of ESLint shared configs and rules used by GitHub.",
+  "homepage": "https://github.com/altairtv/eslint-plugin-altair#readme",
+  "author": "Altair Interactive, Inc.",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "files": [
+    "bin/*",
+    "lib/*"
+  ],
+  "repository": "altairtv/eslint-plugin-altair",
+  "bugs": {
+    "url": "https://github.com/altairtv/eslint-plugin-altair/issues"
+  },
+  "scripts": {
+    "pretest": "mkdir -p node_modules/ && ln -fs $(pwd) node_modules/",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "test": "npm run eslint-check && eslint . && mocha tests/"
+  },
+  "prettier": "@altairtv/prettier-config",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-rule-documentation": "^1.0.23",
+    "prettier": "^2.0.5",
+    "svg-element-attributes": "^1.3.1"
+  },
+  "devDependencies": {
+    "@altairtv/prettier-config": "0.0.1",
+    "eslint": "^7.5.0",
+    "mocha": "^8.0.1"
+  }
+}
