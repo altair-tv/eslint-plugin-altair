@@ -1,11 +1,17 @@
 {
   "name": "@altairtv/eslint-plugin-altair",
   "version": "0.0.1",
-  "description": "An opinionated collection of ESLint shared configs and rules used by GitHub.",
+  "description": "An opinionated collection of ESLint shared configs and rules.",
   "homepage": "https://github.com/altairtv/eslint-plugin-altair#readme",
   "author": "Altair Interactive, Inc.",
   "license": "MIT",
   "main": "lib/index.js",
+  "entries": [
+    "lib/formatters/stylish-fixes.js"
+  ],
+  "bin": {
+    "eslint-ignore-errors": "bin/eslint-ignore-errors.js"
+  },
   "files": [
     "bin/*",
     "lib/*"
@@ -17,7 +23,8 @@
   "scripts": {
     "pretest": "mkdir -p node_modules/ && ln -fs $(pwd) node_modules/",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "test": "npm run eslint-check && eslint . && mocha tests/"
+    "test": "npm run eslint-check && eslint . && mocha tests/",
+    "postpublish": "npm publish --ignore-scripts --@altairtv:registry='https://npm.pkg.github.com'"
   },
   "prettier": "@altairtv/prettier-config",
   "dependencies": {
@@ -35,5 +42,8 @@
     "@altairtv/prettier-config": "0.0.1",
     "eslint": "^7.5.0",
     "mocha": "^8.0.1"
+  },
+  "peerDependencies": {
+    "eslint": ">=4.19.0"
   }
 }
