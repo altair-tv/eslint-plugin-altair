@@ -1,5 +1,5 @@
 {
-  "name": "@altairtv/eslint-plugin-altair",
+  "name": "eslint-plugin-altair",
   "version": "1.0.0",
   "description": "An opinionated collection of ESLint shared configs and rules.",
   "homepage": "https://github.com/altairtv/eslint-plugin-altair#readme",
@@ -23,8 +23,7 @@
   "scripts": {
     "pretest": "mkdir -p node_modules/ && ln -fs $(pwd) node_modules/",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "test": "npm run eslint-check && eslint . && mocha tests/",
-    "postpublish": "npm publish --ignore-scripts --@altairtv:registry='https://npm.pkg.github.com'"
+    "test": "npm run eslint-check && eslint . && mocha tests/"
   },
   "prettier": "@altairtv/prettier-config",
   "dependencies": {
