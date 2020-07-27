@@ -1,6 +1,6 @@
 {
   "name": "@altairtv/eslint-plugin-altair",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "An opinionated collection of ESLint shared configs and rules.",
   "homepage": "https://github.com/altairtv/eslint-plugin-altair#readme",
   "author": "Altair Interactive, Inc.",
